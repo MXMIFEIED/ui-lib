@@ -6,8 +6,10 @@ local startUpArgs = getgenv().startUpArgs or { 'universal', 'public' }
     --LEAKED BY FIJI https://v3rmillion.net/showthread.php?tid=1208282
 --]]
 
-local drawing  = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/MXMIFEIED/drawing/main/drawing.lua', Method = 'GET'}).Body)()
-local tween = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/MXMIFEIED/drawing/main/tween.lua', Method = 'GET'}).Body)()
+
+local drawing  = loadstring(game:HttpGet("https://raw.githubusercontent.com/MXMIFEIED/drawing/main/drawing.lua"))()
+local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/MXMIFEIED/drawing/main/tween.lua"))()
+
 local services = setmetatable({}, {
     __index = function(_, k)
         k = (k == "InputService" and "UserInputService") or k
